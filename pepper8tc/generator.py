@@ -73,7 +73,7 @@ class GeneratorBase(object):
 
             # Add line to the FileResult
             severity = GeneratorBase.code_to_severity(code)
-            fr.add_error(code, line, char, desc, severity)
+            fr.add_error(code, line, char, self.escape_description(desc), severity)
 
         # Add final FileResult to statistics, if any were parsed
         if fr:
