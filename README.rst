@@ -1,16 +1,16 @@
 pepper8
 =======
 
-.. image:: https://img.shields.io/pypi/v/pepper8.svg
+.. image:: https://img.shields.io/pypi/v/pepper8tc.svg
     :alt: Pepper8 Version
-    :target: https://pypi.python.org/pypi/pepper8
+    :target: https://pypi.python.org/pypi/pepper8tc
     
-.. image:: https://img.shields.io/pypi/dm/pepper8.svg
-    :alt: Pepper8 Downloads
-    :target: https://pypi.python.org/pypi/pepper8
+.. image:: https://img.shields.io/pypi/dm/pepper8tc.svg
+    :alt: Pepper8tc Downloads
+    :target: https://pypi.python.org/pypi/pepper8tc
     
-.. image:: https://requires.io/github/myth/pepper8/requirements.svg?branch=master
-     :target: https://requires.io/github/myth/pepper8/requirements/?branch=master
+.. image:: https://requires.io/github/kobymeir/pepper8/requirements.svg?branch=master
+     :target: https://requires.io/github/kobymeir/pepper8/requirements/?branch=master
      :alt: Requirements Status
 
 Transform pep8 or flake8 output to HTML
@@ -27,7 +27,7 @@ Or you can clone the latest master branch and build using setuptools
 
 .. code:: bash
 
-    git clone git@github.com:myth/pepper8.git && cd pepper8 && python setup.py install
+    git clone git@github.com:kobymeir/pepper8.git && cd pepper8 && python setup.py install
 
 
 Usage

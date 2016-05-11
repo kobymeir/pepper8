@@ -12,6 +12,7 @@ from generator import GENERATOR_CHOICES, GeneratorBase
 from parser import Parser
 
 VERSION = '0.0.1'
+NAME = 'pepper8tc'
 
 
 def main(arguments=None):
@@ -21,9 +22,9 @@ def main(arguments=None):
     fileparser = None
     argparser = argparse.ArgumentParser(
         description='Convert pep8 or flake8 output to HTML',
-        prog='pepper8',
-        epilog='pepper8 accepts input either from stdin or from a filename argument.\n' +
-               'Unless specified otherwise with -o OUTPUT_FILE, pepper8 outputs to stdout.'
+        prog=NAME,
+        epilog='%(name)s accepts input either from stdin or from a filename argument.\n' +
+               'Unless specified otherwise with -o OUTPUT_FILE, %(name)s outputs to stdout.' % {'name': NAME}
     )
     argparser.add_argument(
         'filename',
@@ -40,7 +41,7 @@ def main(arguments=None):
     argparser.add_argument(
         '--version',
         action='store_true',
-        help='Prints pepper8 version and exists'
+        help='Prints %s version and exists' % NAME
     )
     argparser.add_argument(
         '-o',
@@ -59,7 +60,7 @@ def main(arguments=None):
     # Fetch the provided arguments from sys.argv
     args = argparser.parse_args(args)
     if args.version:
-        print('Pepper8 version %s' % VERSION)
+        print('%s version %s' % (NAME, VERSION) )
         exit(0)
 
     if args.filename:

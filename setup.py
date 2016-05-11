@@ -33,7 +33,7 @@ setup(
     description='Transforms pep8 or flake8 output into an HTML or TeamCity report output.',
     long_description=readme,
     author="Koby Meir (Initially code by Aleksander 'myth' Skraastad)",
-    author_email='myth@overflow.no',
+    author_email='kobymeir@users.noreply.github.com',
     packages=['pepper8tc'],
     license='MIT License',
     install_requires=requires,
