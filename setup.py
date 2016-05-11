@@ -31,7 +31,7 @@ setup(
     packages=['pepper8tc'],
     license='MIT License',
     install_requires=[
-        'Jinja2>=2.7',
+        'Jinja2',
     ],
     url='https://github.com/kobymeir/pepper8',
     package_data={
