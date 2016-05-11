@@ -1,6 +1,5 @@
 ##teamcity[testSuiteStarted name='{{ report_name }}']
 {% for file in files -%}
-##teamcity[testSuiteStarted name='{{ report_name }}: {{ file.path }}']
     {% for code, line, pos, description, severity in file.lines -%}
         {% if severity == 'Error' or severity == 'Flake' -%}
 ##teamcity[testFailed name='{{ report_name }}: {{ file.path }}' message='line, {{ line }}, col {{ pos }}, {{ description }} ({{ code }})']
@@ -8,6 +7,5 @@
 ##teamcity[testStdOut name='{{ report_name }}: {{ file.path }}' out='warning: line, {{ line }}, col {{ pos }}, {{ description }} ({{ code }})']
         {% endif -%}
     {% endfor -%}
-##teamcity[testFinished name='{{ report_name }}: {{ file.path }}']
 {% endfor -%}
 ##teamcity[testSuiteFinished name='{{ report_name }}']
