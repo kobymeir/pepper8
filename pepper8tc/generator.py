@@ -51,6 +51,9 @@ class GeneratorBase(object):
         self.total_complexity = 0
         self.violations = {}
 
+    def escape_description(self, description):
+        return description
+
     def analyze(self, output_file=None):
         """
         Analyzes the parsed results from Flake8 or PEP 8 output and creates FileResult instances
@@ -203,5 +206,9 @@ class TeamCityGenerator(TemplateBaseGenerator):
     from the Parser object.
     """
     TEMPLATE = 'templates/teamcity_template.txt'
+
+    def escape_description(self, description):
+        return description.replace("|", "||").replace("'", "|'").replace("\n", "|n").replace("[", "|[").replace("]", "|]")
+
 
 GENERATOR_CHOICES = {'html': HtmlGenerator, 'teamcity': TeamCityGenerator}
