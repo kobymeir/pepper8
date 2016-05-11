@@ -32,14 +32,14 @@ setup(
     version=__version__,
     description='Transforms pep8 or flake8 output into an HTML or TeamCity report output.',
     long_description=readme,
-    author="Aleksander 'myth' Skraastad'",
+    author="Koby Meir (Initially code by Aleksander 'myth' Skraastad)",
     author_email='myth@overflow.no',
     packages=['pepper8tc'],
     license='MIT License',
     install_requires=requires,
-    url='https://github.com/myth/pepper8',
+    url='https://github.com/kobymeir/pepper8',
     package_data={
-        'pepper8': ['templates/*.html']
+        'pepper8tc': ['templates/*_template.*']
     },
     classifiers=[
         'Intended Audience :: Developers',
@@ -50,6 +50,6 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     entry_points={
-        'console_scripts': ['pepper8 = pepper8.main:main']
+        'console_scripts': ['pepper8tc = pepper8tc.main:main']
     }
 )
