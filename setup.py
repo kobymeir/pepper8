@@ -3,7 +3,7 @@
 import os
 import sys
 
-from pepper8.main import VERSION
+from pepper8tc.main import VERSION
 
 __version__ = VERSION
 
@@ -28,13 +28,13 @@ requires = [
 ]
 
 setup(
-    name='pepper8',
+    name='pepper8tc',
     version=__version__,
-    description='Transforms pep8 or flake8 output into an HTML report.',
+    description='Transforms pep8 or flake8 output into an HTML or TeamCity report output.',
     long_description=readme,
     author="Aleksander 'myth' Skraastad'",
     author_email='myth@overflow.no',
-    packages=['pepper8'],
+    packages=['pepper8tc'],
     license='MIT License',
     install_requires=requires,
     url='https://github.com/myth/pepper8',
