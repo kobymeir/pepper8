@@ -56,7 +56,8 @@ def main(arguments=None):
         help='Selects the generator Html or TeamCity'
     )
     argparser.add_argument(
-        'report-name',
+        '-r',
+        '--report-name',
         type=str,
         default=DEFAULT_REPORT_NAME,
         help='Name for the report.'
