@@ -91,7 +91,7 @@ def main(arguments=None):
             exit(0)
 
     # Generate the HTML report to output_file if not None, else print to stdout
-    generator = GeneratorBase.create_generator(args.generator, fileparser)
+    generator = GeneratorBase.create_generator(args.generator, fileparser, args.report_name)
     if generator is None:
         stderr.write('Unsupported generator: %s' % args.generator)
         stderr.flush()
