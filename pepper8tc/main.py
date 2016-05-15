@@ -13,7 +13,7 @@ from parser import Parser
 
 VERSION = '0.0.1'
 NAME = 'pepper8tc'
-
+DEFAULT_REPORT_NAME='PEP 8 Report'
 
 def main(arguments=None):
 
@@ -52,9 +52,14 @@ def main(arguments=None):
     argparser.add_argument(
         '-g',
         '--generator',
-#        type="choice",
         choices=GENERATOR_CHOICES.keys(),
         help='Selects the generator Html or TeamCity'
+    )
+    argparser.add_argument(
+        'report-name',
+        type=str,
+        default=DEFAULT_REPORT_NAME,
+        help='Name for the report.'
     )
 
     # Fetch the provided arguments from sys.argv

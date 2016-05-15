@@ -31,7 +31,7 @@ class GeneratorBase(object):
         elif 'C' in code_upper:
             return 'Complexity'
 
-    def __init__(self, parser):
+    def __init__(self, parser, report_name):
         """
         Construct a Generator object.
 
@@ -50,6 +50,7 @@ class GeneratorBase(object):
         self.total_naming = 0
         self.total_complexity = 0
         self.violations = {}
+        self.report_name = report_name
 
     def escape_description(self, description):
         return description
@@ -128,10 +129,10 @@ class GeneratorBase(object):
             stderr.flush()
 
     @classmethod
-    def create_generator(cls, generator_type, fileparser):
+    def create_generator(cls, generator_type, fileparser, report_name):
         generator_class = GENERATOR_CHOICES.get(generator_type)
         if generator_class is not None:
-            return generator_class(fileparser)
+            return generator_class(fileparser, report_name)
         return None
 
 
@@ -170,7 +171,7 @@ class TemplateBaseGenerator(GeneratorBase):
             # Write our rendered template to the file descriptor
             fd.write(
                 template.render(
-                    report_name='PEP 8 Report',
+                    report_name=self.report_name,
                     files=sorted(self.files.values(), key=lambda x: x.path),
                     total_warnings=self.total_warnings,
                     total_errors=self.total_errors,
